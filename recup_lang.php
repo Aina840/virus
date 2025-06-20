@@ -1,10 +1,14 @@
 <?php
-// L'URL de la page à récupérer
-$url = "index.php";
+// Chemin vers le fichier à lire
+$cheminFichier = 'index.php';
 
-// Utilisation de file_get_contents pour obtenir le code source
-$html = file_get_contents($url);
+// Récupérer le contenu du fichier
+$contenu = file_get_contents($cheminFichier);
 
-// Affichage du code source
-echo $html;
+// Afficher le contenu
+if ($contenu !== false) {
+    echo $contenu;
+} else {
+    echo "Erreur lors de la lecture du fichier.";
+}
 ?>
